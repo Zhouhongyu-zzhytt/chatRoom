@@ -228,7 +228,7 @@ void chatServer::broadcast(const MSG &msg, int exclude_fd)
     {
         if(client.Client_fd!=exclude_fd)
         {
-            if(send(client.Client_fd,data.c_str(),sizeof(data,0)==-1)//bug
+            if(send(client.Client_fd,data.c_str(),data.size(),0)==-1)//bug
             {
                 perror("send error");
                 return;
